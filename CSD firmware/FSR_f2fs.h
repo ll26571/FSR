@@ -91,7 +91,6 @@ typedef unsigned long long __u64;
 /*
  * For NODE structure
  */
-
 #define F2FS_NAME_LEN		255
 /* 200 bytes for inline xattrs by default */
 #define DEFAULT_INLINE_XATTR_ADDRS	50
@@ -372,6 +371,4 @@ void retrieve_address(unsigned int ino, unsigned int *blk_addr, unsigned int *bl
 unsigned long long get_file_blocks(unsigned int ino);
 unsigned long long get_file_size(unsigned int ino);
 unsigned int read_data_sync(unsigned int blk_addr, unsigned int blk_num);
-
-unsigned int search_keyword();
 
