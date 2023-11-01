@@ -34,7 +34,7 @@ p
 4096
 5242880
 w
-" | fdisk /dev/nvme0n1
+" | sudo fdisk /dev/nvme0n1
 
 sudo mkfs.f2fs -l f2fs -d 3 /dev/nvme0n1p1
 sudo mount /dev/nvme0n1p1 /home/nvme
@@ -50,6 +50,6 @@ sync
 Compile the applications and run:
 ```
 gcc fsr-search.c -o fsr-search
-sudo ./fsr-search
+sudo ./fsr-search /hello_64KB.txt
 ```
 

@@ -39,7 +39,7 @@ void f2fs_updateCP(unsigned int dataAddr){
 	struct f2fs_checkpoint *temp_ckpt = (struct f2fs_checkpoint *)dataAddr;
 	unsigned int update = 0;
 
-	if (temp_ckpt->checkpoint_ver == 0)
+	if (temp_ckpt->checkpoint_ver == 0 || temp_ckpt->checkpoint_ver == 0xffffffffffffffff)
 		return;
 	
 	if (ckpt.checkpoint_ver == 0)
@@ -205,7 +205,7 @@ unsigned int read_inode(unsigned int ino){
 	
 	for (int i = 0; i < sum.n_nats; i++){
 		if (sum.nat_j.entries[i].nid == ino){
-			inode_pbn = sum.nat_j.entries[i].ne.block_addr;
+			inode_pbn = FS_OFFSET + sum.nat_j.entries[i].ne.block_addr;
 			break;
 		}
 	}

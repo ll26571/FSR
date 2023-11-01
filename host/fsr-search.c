@@ -9,7 +9,7 @@
 int main(int argc, char const *argv[])
 {
     if(argc != 2){
-        printf ("Usage: main_cosmos file_path(started from /).\n");
+        printf ("Usage: fsr-search file_path(started from /).\n");
         return 1;
     }
 
